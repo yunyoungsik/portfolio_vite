@@ -5,11 +5,11 @@ import { ScrollToPlugin } from "gsap/all";
 export function slider() {
     gsap.registerPlugin(ScrollTrigger);
 
-    let sections = gsap.utils.toArray(".parallax__item");
-    let center = gsap.utils.toArray(".centerSlider");
-    let page = gsap.utils.toArray(".pageIndex");
-    let title = gsap.utils.toArray(".title");
-    let desc = gsap.utils.toArray(".desc");
+    let sections = gsap.utils.toArray("#wrap .parallax__item");
+    let center = gsap.utils.toArray("#wrap .centerSlider");
+    let page = gsap.utils.toArray("#wrap .pageIndex");
+    let title = gsap.utils.toArray("#wrap .title");
+    let desc = gsap.utils.toArray("#wrap .desc");
 
     let animation = gsap.timeline({
         scrollTrigger: {

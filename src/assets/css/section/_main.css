@@ -118,6 +118,12 @@
     font-weight: 700;
 }
 
+.mainSlider__center>.center__text>.titleSlider>.titleWrap>.title a {
+    font-size: 48px;
+    font-family: var(--font-noto);
+    font-weight: 700;
+}
+
 .mainSlider__center>.center__text>.descSlider {
     height: 24px;
     overflow: hidden;
@@ -140,7 +146,7 @@
 
 .mainSlider__center>.center__img>.centerSliderWrap {
     width: 100%;
-    height: 6480px;
+    height: 500%;
 }
 
 .mainSlider__center>.center__img>.centerSliderWrap>.centerSlider>a {
