@@ -196,7 +196,9 @@
 .pageLine {
     margin: 0 8px;
 }
-
+.mainSlider__bottom.scroll__text {
+    font-family: var(--font-gamarket);
+}
 .mainSlider__bottom>.scroll__arrow {
     transform: translate(90deg);
     transform: translateX(40%);
