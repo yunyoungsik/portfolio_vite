@@ -22,6 +22,8 @@
 
 /* about */
 .about {
+    font-family: var(--font-gamarket);
+    font-size: 18px;
     position: fixed;
     top: 35px;
     right: 40px;
