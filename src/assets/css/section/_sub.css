@@ -1,0 +1,247 @@
+/* 배경 어둡게 */
+.subFilter::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* scrollBar */
+.scrollBar {
+    position: fixed;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: transparent;
+    width: 200px;
+    height: 1px;
+    z-index: 1000;
+}
+
+.scrollBar progress {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 1px;
+    border: none;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.scrollBar progress::-webkit-progress-bar {
+    background: transparent;
+}
+
+.scrollBar progress::-webkit-progress-value {
+    background: linear-gradient(to left, #fff, #fff);
+    background-attachment: fixed;
+}
+
+.scrollBar progress::-moz-progress-bar {
+    background: linear-gradient(to left, #fff, #fff);
+    background-attachment: fixed;
+}
+
+/* sub */
+.bgsliderWrap.sub {
+    width: 500%;
+}
+
+.subPage {
+    position: fixed;
+    bottom: 45px;
+    left: 40px;
+    color: var(--white);
+    z-index: 1000;
+    height: 24px;
+    overflow: hidden;
+}
+
+.subPage .current {
+    display: block;
+    font-size: 1rem;
+    font-family: var(--font-gamarket);
+}
+
+.sub__center {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 35px 40px 45px;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    z-index: 1;
+}
+
+.sub__center .text {
+    position: absolute;
+    left: 0;
+    padding-left: 40px;
+}
+
+.sub__center .titleWrap {
+    height: 72px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.sub__center .subTitle {
+    font-size: 48px;
+    font-family: var(--font-noto);
+    font-weight: 700;
+}
+
+.sub__center .subDesc {
+    font-size: 16px;
+    font-family: var(--font-arita);
+}
+
+.sub__bottom {
+    height: 20%;
+}
+
+/* section */
+.section {
+    width: 25%;
+    height: 100%;
+    font-size: 12vw;
+    text-align: center;
+    font-family: var(--font-gamarket);
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* info */
+.info {
+    font-size: 1rem;
+    font-family: var(--font-gamarket);
+    width: 25%;
+    height: 100%;
+    padding-bottom: 12vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.info__inner h2 {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.info__inner h2,
+.info__inner h3 {
+    font-size: 1rem;
+}
+
+.info__inner h2,
+.info__inner .coding,
+.info__inner .workTime {
+    margin-bottom: 40px;
+}
+
+.info a {
+    position: relative;
+}
+
+.info a svg {
+    width: 0.8rem;
+    height: 0.8rem;
+}
+
+/* desc */
+.sub__center .desc {
+    width: 80%;
+    height: 100%;
+    font-family: var(--font-arita);
+    font-size: 1.1rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+    display: flex;
+    align-items: flex-end;
+    /* justify-content: flex-end; */
+    padding-bottom: 12vh;
+}
+
+.sub__center .desc .desc__inner h2 {
+    font-family: var(--font-gamarket);
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 8vh;
+}
+
+.sub__center .desc .desc__inner span {
+    display: block;
+    text-decoration: underline;
+    text-underline-position: under;
+}
+
+.sub__center .desc .desc__inner p {
+    margin-bottom: 2vh;
+}
+
+/* trouble */
+.sub__center .trouble {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+    font-size: 1rem;
+}
+
+.sub__center .trouble .trouble__inner {
+    padding-right: 40px;
+}
+
+.sub__center .trouble .trouble__inner h2 {
+    font-family: var(--font-gamarket);
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 4vh;
+}
+
+.sub__center .trouble .trouble__inner h3 {
+    font-family: var(--font-arita);
+    text-decoration: underline;
+    text-underline-position: under;
+}
+
+.sub__center .trouble .trouble__inner p {
+    font-family: var(--font-arita);
+    margin-bottom: 2vh;
+}
+
+.sub__center .trouble .trouble__inner .language-js {
+    font-size: 0.8rem;
+}
+
+/* subNext */
+.sub__center .subNext {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.sub__center .subNext .subNext__inner {
+    padding-left: 40px;
+}
+
+.sub__center .subNext .subNext__inner a {
+    position: relative;
+}
+
+.sub__center .subNext .subNext__inner h2 {
+    font-family: var(--font-noto);
+    font-size: 4vw;
+}
+
+.sub__center .subNext .subNext__inner h2 a {
+    width: 100%;
+}
+
+.sub__center .subNext .subNext__inner h2 a svg {
+    width: 2vw;
+    fill: var(--white);
+}
