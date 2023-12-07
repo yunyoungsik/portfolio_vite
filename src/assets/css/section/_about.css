@@ -1,0 +1,101 @@
+#about {
+    width: 100%;
+    background-color: var(--black);
+    position: relative;
+}
+
+/* header */
+#about #header {
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    padding: 30px 40px 0;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+#about #header .logo,
+#about #header .aboutClose {
+    color: var(--white);
+    font-family: var(--font-gmarket);
+    font-size: 18px;
+}
+
+#about #header .aboutClose a {
+    display: block;
+}
+
+/* main */
+#main {
+    box-sizing: border-box;
+}
+
+/* aboutSliderWrap */
+.aboutSliderWrap {
+    width: 100%;
+    background-color: var(--black);
+}
+
+.aboutSlider {
+    width: 100%;
+    height: 100vh;
+}
+
+/* aboutCenter */
+.aboutCenter {
+    position: fixed;
+    top: 50%;
+    left: 40px;
+    transform: translateY(-50%);
+    color: var(--white);
+    z-index: 1;
+
+}
+
+.aboutCenter h2 {
+    font-size: 72px;
+    font-family: var(--font-noto);
+}
+
+.aboutCenter p {
+    font-family: var(--font-gmarket);
+    font-size: 18px;
+}
+
+/* aboutDesc */
+.aboutDesc {
+    padding: 35px 40px 45px;
+    width: 100%;
+    height: 100vh;
+    text-align: right;
+    color: var(--white);
+    background-color: var(--black);
+}
+
+/* aboutText */
+.aboutText {
+    padding: 35px 40px 45px;
+    width: 100%;
+    height: 100vh;
+    color: var(--white);
+    background-color: var(--black);
+}
+
+.aboutService {
+    margin-bottom: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: right;
+}
+
+.aboutContact {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.social,
+.email {
+    display: flex;
+}

@@ -63,7 +63,7 @@
 .subPage .current {
     display: block;
     font-size: 1rem;
-    font-family: var(--font-gamarket);
+    font-family: var(--font-gmarket);
 }
 
 .sub__center {
@@ -110,14 +110,14 @@
     height: 100%;
     font-size: 12vw;
     text-align: center;
-    font-family: var(--font-gamarket);
+    font-family: var(--font-gmarket);
     border-right: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 /* info */
 .info {
     font-size: 1rem;
-    font-family: var(--font-gamarket);
+    font-family: var(--font-gmarket);
     width: 25%;
     height: 100%;
     padding-bottom: 12vh;
@@ -166,7 +166,7 @@
 }
 
 .sub__center .desc .desc__inner h2 {
-    font-family: var(--font-gamarket);
+    font-family: var(--font-gmarket);
     color: rgba(255, 255, 255, 0.5);
     margin-bottom: 8vh;
 }
@@ -196,7 +196,7 @@
 }
 
 .sub__center .trouble .trouble__inner h2 {
-    font-family: var(--font-gamarket);
+    font-family: var(--font-gmarket);
     color: rgba(255, 255, 255, 0.5);
     margin-bottom: 4vh;
 }

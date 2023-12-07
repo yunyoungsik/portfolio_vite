@@ -2,7 +2,7 @@
     width: 100%;
     height: 100vh;
     position: relative;
-    font-family: var(--font-gamarket);
+    font-family: var(--font-gmarket);
     font-size: 18px;
 }
 
@@ -97,7 +97,7 @@
 .mainSlider__top>.logo>a {
     display: block;
     font-size: 18px;
-    font-family: var(--font-gamarket);
+    font-family: var(--font-gmarket);
 }
 
 /* center */
@@ -131,7 +131,7 @@
 
 .mainSlider__center>.center__text>.descSlider>.descWrap>.desc {
     font-size: 16px;
-    font-family: var(--font-gamarket);
+    font-family: var(--font-gmarket);
 }
 
 .mainSlider__center>.center__img {
@@ -190,15 +190,17 @@
 .mainSlider__bottom>.page>span {
     display: inline-block;
     font-size: 1rem;
-    font-family: var(--font-gamarket);
+    font-family: var(--font-gmarket);
 }
 
 .pageLine {
     margin: 0 8px;
 }
+
 .mainSlider__bottom.scroll__text {
-    font-family: var(--font-gamarket);
+    font-family: var(--font-gmarket);
 }
+
 .mainSlider__bottom>.scroll__arrow {
     transform: translate(90deg);
     transform: translateX(40%);

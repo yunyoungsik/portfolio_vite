@@ -1,6 +1,6 @@
 :root {
     --font-noto: "Noto Serif Display";
-    --font-gamarket: "GmarketSans";
+    --font-gmarket: "GmarketSans";
     --font-arita: "AritaBuri";
 
     --black: #000;
@@ -11,7 +11,7 @@
     --white100: #dbdcd8;
 
     /* 폰트 셋팅 */
-    font-family: var(--font-arita), var(--font-noto), var(--font-gamarket);
+    font-family: var(--font-arita), var(--font-noto), var(--font-gmarket);
     font-size: 16px;
     line-height: 1.5;
     font-weight: 400;
