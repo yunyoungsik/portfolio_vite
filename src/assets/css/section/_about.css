@@ -87,12 +87,21 @@
     width: 100%;
     display: flex;
     justify-content: right;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .aboutContact {
     width: 100%;
+}
+
+.aboutContact__social,
+.aboutContact__email {
     display: flex;
-    justify-content: space-between;
+}
+
+.aboutContact__social>div,
+.aboutContact__email>div {
+    width: 33.333%;
 }
 
 .social,
