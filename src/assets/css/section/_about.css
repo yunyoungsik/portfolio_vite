@@ -60,7 +60,9 @@
 
 .aboutCenter p {
     font-family: var(--font-gmarket);
-    font-size: 18px;
+    font-size: 12px;
+    text-align: right;
+    transform: translateX(25%);
 }
 
 /* aboutDesc */
@@ -83,17 +85,51 @@
 }
 
 .aboutService {
+    padding-right: 80px;
     margin-bottom: 10%;
     width: 100%;
+    height: 10%;
     display: flex;
     justify-content: right;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
+.aboutService__inner {
+    width: 55%;
+    display: flex;
+    justify-content: space-between;
+}
+.aboutSkill {
+    display: flex;
+}
+.aboutService__inner .markup {
+    margin-right: 90px;
+}
+.aboutService__inner .aboutTitle,
+.aboutService__inner .markup h2,
+.aboutService__inner .markup p,
+.aboutService__inner .tool h2,
+.aboutService__inner .tool p {
+    font-size: 16px;
+    font-family: var(--font-gmarket);
+}
+.aboutService__inner .markup h2,
+.aboutService__inner .tool h2 {
+    margin-bottom: 10px;
+}
+.aboutService__inner .markup p,
+.aboutService__inner .tool p {
+    color: var(--black500);
+    line-height: 1.1;
+}
+
 
 .aboutContact {
     width: 100%;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
-
+.aboutContact__social {
+    margin-bottom: 40px;
+}
 .aboutContact__social,
 .aboutContact__email {
     display: flex;
@@ -104,7 +140,23 @@
     width: 33.333%;
 }
 
+.aboutContact__social>.title,
+.aboutContact__social>.title2,
+.aboutContact__email>.title,
+.aboutContact__email>.title2 {
+    font-size: 16px;
+    font-family: var(--font-gmarket);
+}
+
+.social>span,
+.email>span {
+    margin-bottom: 5px;
+}
+
 .social,
 .email {
     display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    font-family: var(--font-gmarket);
 }

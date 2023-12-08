@@ -209,3 +209,30 @@
 .mainSlider__bottom>.scroll__arrow>div>svg {
     height: 12px;
 }
+
+@media(max-width: 1450px){
+    .mainSlider__center .center__text {
+        /* text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%; */
+        z-index: 1;
+    }
+    .mainSlider__center>.center__text>.descSlider>.descWrap>.desc:nth-child(2) {
+        background-color: var(--black);
+        color: var(--white);
+    }
+}
+@media(max-width: 800px){
+    .mainSlider {
+        width: 100%;
+    }
+    .mainSlider__center {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+    .mainSlider__center>.center__text>.titleSlider>.titleWrap>.title:nth-child(2) a {
+        color: var(--white);
+    }
+}
