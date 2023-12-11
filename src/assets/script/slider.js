@@ -21,9 +21,22 @@ export function slider() {
         }
     });
 
-    animation.to(sections, { xPercent: -100 * (sections.length - 1), ease: "none" }, 0)
-        .to(center, { y: -1080 * (center.length - 1), ease: "none" }, 0)
-        .to(desc, { y: -24 * (desc.length - 1), ease: "none" }, 0)
-        .to(page, { y: -24 * (page.length - 1), ease: "none" }, 0)
-        .to(title, { y: -72 * (title.length - 1), ease: "none" }, 0);
+    ScrollTrigger.matchMedia({
+        "(min-width: 801px)": function () {
+            animation.to(sections, { xPercent: -100 * (sections.length - 1), ease: "none" }, 0)
+                .to(center, { y: -1080 * (center.length - 1), ease: "none" }, 0)
+                .to(desc, { y: -24 * (desc.length - 1), ease: "none" }, 0)
+                .to(page, { y: -24 * (page.length - 1), ease: "none" }, 0)
+                .to(title, { y: -72 * (title.length - 1), ease: "none" }, 0);
+        },
+        "(max-width: 800px)": function () {
+            animation.to(sections, { xPercent: -100 * (sections.length - 1), ease: "none" }, 0)
+                .to(center, { y: -1080 * (center.length - 1), ease: "none" }, 0)
+                .to(desc, { y: -22.39 * (desc.length - 1), ease: "none" }, 0)
+                .to(page, { y: -22.39 * (page.length - 1), ease: "none" }, 0)
+                .to(title, { y: -72 * (title.length - 1), ease: "none" }, 0);
+        }
+    });
+
+
 }

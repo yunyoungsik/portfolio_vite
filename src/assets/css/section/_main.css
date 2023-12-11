@@ -177,6 +177,8 @@
 
 .mainSlider__bottom>.page {
     display: flex;
+    font-size: 16px;
+    font-family: var(--font-gmarket);
     height: 24px;
     overflow: hidden;
 }
@@ -189,8 +191,6 @@
 .mainSlider__bottom>.page>.current>span,
 .mainSlider__bottom>.page>span {
     display: inline-block;
-    font-size: 1rem;
-    font-family: var(--font-gmarket);
 }
 
 .pageLine {
@@ -199,6 +199,7 @@
 
 .mainSlider__bottom.scroll__text {
     font-family: var(--font-gmarket);
+    font-size: 16px;
 }
 
 .mainSlider__bottom>.scroll__arrow {
@@ -212,7 +213,6 @@
 
 @media(max-width: 1450px) {
     .mainSlider__center .center__text {
-
         z-index: 1;
     }
 }
@@ -220,6 +220,7 @@
 @media(max-width: 800px) {
     .mainSlider {
         width: 100%;
+        padding: 15px 20px 25px;
     }
 
     .mainSlider__center {
@@ -228,7 +229,14 @@
         justify-content: center;
     }
 
-    .mainSlider__center>.center__text>.titleSlider>.titleWrap>.title:nth-child(2) a {
+    .mainSlider__center>.center__text>.titleSlider>.titleWrap>.title a {
+        font-size: 32px;
         color: var(--white);
+    }
+
+    .mainSlider__center>.center__text>.descSlider>.descWrap>.desc {
+        font-size: 16px;
+        color: var(--white);
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
     }
 }
