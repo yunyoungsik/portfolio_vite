@@ -17,7 +17,7 @@ export function slider() {
             pin: true,
             scrub: 1,
             snap: 1 / (sections.length - 1),
-            end: "+=500",
+            end: "+=5500",
         }
     });
 
@@ -34,7 +34,7 @@ export function slider() {
                 .to(center, { y: -1080 * (center.length - 1), ease: "none" }, 0)
                 .to(desc, { y: -22.39 * (desc.length - 1), ease: "none" }, 0)
                 .to(page, { y: -22.39 * (page.length - 1), ease: "none" }, 0)
-                .to(title, { y: -72 * (title.length - 1), ease: "none" }, 0);
+                .to(title, { y: -43 * (title.length - 1), ease: "none" }, 0);
         }
     });
 

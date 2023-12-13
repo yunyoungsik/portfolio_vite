@@ -259,6 +259,15 @@
         right: 20px;
     }
 
+    .center__text {
+        width: 100%;
+    }
+
+    .mainSlider__center>.center__text>.titleSlider>.titleWrap>.title {
+        color: var(--white);
+        font-size: 32px;
+    }
+
     .sub__center {
         padding: 15px 20px 25px;
     }

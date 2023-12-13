@@ -6,7 +6,7 @@ export function subSlider() {
 
     gsap.to(mainSlider, {
         xPercent: -100,
-        duration: 2,
+        duration: 1,
         backgroundColor: "black",
         ease: "Power1.easeInOut",
         display: "none",
@@ -51,7 +51,7 @@ export function subSlider() {
                     opacity: 1,
                     ease: "Power1.easeInOut",
                 },
-                index * 0.02
+                index * 0.01
             );
         });
 
@@ -72,7 +72,7 @@ export function subSlider() {
         const close = gsap.to(mainSlider,
             {
                 xPercent: 0,
-                duration: 2,
+                duration: 1,
                 backgroundColor: "white",
                 ease: "Power1.easeInOut",
                 display: "block",

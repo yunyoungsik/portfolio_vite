@@ -1,4 +1,6 @@
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/all";
 
 export function introAni() {
 
@@ -10,22 +12,47 @@ export function introAni() {
     ani.set(".intro__popup .center__img", { width: "100%", height: "100vh" });
     ani.set(".intro__popup .bgSliderWrap", { width: "100%" });
 
-    ani.fromTo(".intro__popup .titleWrap", { y: 72, opacity: 0 }, { y: 0, opacity: 1, duration: 1 })
-        .fromTo(".intro__popup .center__img", { scale: 1 }, { scale: 0.5, duration: 2, ease: "power1.inOut" })
-        .to(".intro__popup .center__img", { scale: 0.6, duration: 3, ease: "power1.inOut" })
-        .to(".intro__popup .center__img", { width: 250, height: 410, scale: 1, duration: 3, ease: "power1.inOut" })
-        .fromTo(".intro__popup .mainSlider", { width: "100%" }, { width: "80%" })
-        .to(".intro__popup .titleWrap h2", { y: -72 })
-        .to(".intro__popup .center__text", { xPercent: -200, opacity: 0, duration: 1, ease: "power1.inOut" })
-        .to(".intro__popup .center__text", { textAlign: "left", position: "relative", top: "auto", left: "auto", y: 0, x: 0, xPercent: 0, yPercent: 0, })
-        .to(".intro__popup .center__text", { opacity: 1 })
-        .fromTo(".intro__popup .descWrap", { y: 24, opacity: 0, visibility: "hidden" }, { y: 0, opacity: 1, visibility: "visible", duration: 1, ease: "power1.inOut" })
-        .fromTo([".intro__popup .mainSlider__top", ".intro__popup .mainSlider__bottom"], { display: "none" }, { display: "flex" })
-        .to(".intro__popup .mainSlider__center", { height: "60%" })
-        .fromTo([".intro__popup .pause", ".intro__popup .scroll__arrow"], { xPercent: 100, opacity: 0 }, { xPercent: -100, opacity: 1, ease: "power1.inOut" })
-        .fromTo(".intro__popup .logo", { opacity: 0 }, { opacity: 1, ease: "power1.inOut" })
-        .fromTo([".intro__popup .page", ".intro__popup .scroll__text"], { yPercent: 100, opacity: 0 }, { yPercent: -100, opacity: 1, ease: "power1.inOut" })
+    gsap.registerPlugin(ScrollTrigger);
 
+    ScrollTrigger.matchMedia({
+        "(min-width: 801px)": function () {
+            ani.fromTo(".intro__popup .titleWrap", { y: 72, opacity: 0 }, { y: 0, opacity: 1, duration: 1 })
+                .fromTo(".intro__popup .center__img", { scale: 1 }, { scale: 0.5, duration: 2, ease: "power1.inOut" })
+                .to(".intro__popup .center__img", { scale: 0.6, duration: 3, ease: "power1.inOut" })
+                .to(".intro__popup .center__img", { width: 250, height: 410, scale: 1, duration: 3, ease: "power1.inOut" })
+                .fromTo(".intro__popup .mainSlider", { width: "100%" }, { width: "80%" })
+                .to(".intro__popup .titleWrap h2", { y: -72 })
+                .to(".intro__popup .center__text", { xPercent: -200, opacity: 0, duration: 1, ease: "power1.inOut" })
+                .to(".intro__popup .center__text", { textAlign: "left", position: "relative", top: "auto", left: "auto", y: 0, x: 0, xPercent: 0, yPercent: 0, })
+
+                .fromTo([".intro__popup .mainSlider__top", ".intro__popup .mainSlider__bottom"], { display: "none" }, { display: "flex" })
+                .to(".intro__popup .mainSlider__center", { height: "60%" })
+
+                .to(".intro__popup .center__text", { opacity: 1 })
+                .fromTo(".intro__popup .descWrap", { y: 24, opacity: 0, visibility: "hidden" }, { y: 0, opacity: 1, visibility: "visible", duration: 1, ease: "power1.inOut" })
+
+                .fromTo([".intro__popup .pause", ".intro__popup .scroll__arrow"], { xPercent: 100, opacity: 0 }, { xPercent: -100, opacity: 1, ease: "power1.inOut" })
+                .fromTo(".intro__popup .logo", { opacity: 0 }, { opacity: 1, ease: "power1.inOut" })
+                .fromTo([".intro__popup .page", ".intro__popup .scroll__text"], { yPercent: 100, opacity: 0 }, { yPercent: -100, opacity: 1, ease: "power1.inOut" })
+        },
+        "(max-width: 800px)": function () {
+            ani.fromTo(".intro__popup .titleWrap", { y: 72, opacity: 0 }, { y: 0, opacity: 1, duration: 1 })
+                .fromTo(".intro__popup .center__img", { scale: 1 }, { scale: 0.5, duration: 2, ease: "power1.inOut" })
+                .to(".intro__popup .center__img", { scale: 0.6, duration: 3, ease: "power1.inOut" })
+                .to(".intro__popup .center__img", { width: 250, height: 410, scale: 1, duration: 3, ease: "power1.inOut" })
+                .fromTo(".intro__popup .mainSlider", { width: "100%" }, { width: "100%" })
+                .to(".intro__popup .titleWrap h2", { y: -42 })
+                // .to(".intro__popup .center__text", { xPercent: -200, opacity: 0, duration: 1, ease: "power1.inOut" })
+                // .to(".intro__popup .center__text", { textAlign: "left", position: "relative", top: "auto", left: "auto", y: 0, x: 0, xPercent: 0, yPercent: 0, })
+                // .to(".intro__popup .center__text", { opacity: 1 })
+                .fromTo(".intro__popup .descWrap", { y: 24, opacity: 0, visibility: "hidden" }, { y: 0, opacity: 1, visibility: "visible", duration: 1, ease: "power1.inOut" })
+                .fromTo([".intro__popup .mainSlider__top", ".intro__popup .mainSlider__bottom"], { display: "none" }, { display: "flex" })
+                .to(".intro__popup .mainSlider__center", { height: "60%" })
+                .fromTo([".intro__popup .pause", ".intro__popup .scroll__arrow"], { xPercent: 100, opacity: 0 }, { xPercent: -100, opacity: 1, ease: "power1.inOut" })
+                .fromTo(".intro__popup .logo", { opacity: 0 }, { opacity: 1, ease: "power1.inOut" })
+                .fromTo([".intro__popup .page", ".intro__popup .scroll__text"], { yPercent: 100, opacity: 0 }, { yPercent: -100, opacity: 1, ease: "power1.inOut" })
+        }
+    });
     // center Img
     const innerAnimation = gsap.timeline();
 
@@ -45,7 +72,9 @@ export function introAni() {
     });
 
     innerAnimation.eventCallback("onComplete", function () {
-        document.querySelector(".intro__popup").style.display = "none";
+        setTimeout(function () {
+            document.querySelector(".intro__popup").style.display = "none";
+        }, 2000);
     });
 
     // function redirectToNewPage() {

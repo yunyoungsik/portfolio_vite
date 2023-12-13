@@ -229,14 +229,22 @@
         justify-content: center;
     }
 
+    .mainSlider__center>.center__text>.titleSlider {
+        height: 50px;
+    }
+
     .mainSlider__center>.center__text>.titleSlider>.titleWrap>.title a {
         font-size: 32px;
         color: var(--white);
     }
 
-    .mainSlider__center>.center__text>.descSlider>.descWrap>.desc {
+    .mainSlider__center>.center__text>.descSlider {
+        display: none;
+    }
+
+    /* .mainSlider__center>.center__text>.descSlider>.descWrap>.desc {
         font-size: 16px;
         color: var(--white);
         text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-    }
+    } */
 }

@@ -92,17 +92,21 @@
     display: flex;
     justify-content: right;
 }
+
 .aboutService__inner {
     width: 55%;
     display: flex;
     justify-content: space-between;
 }
+
 .aboutSkill {
     display: flex;
 }
+
 .aboutService__inner .markup {
     margin-right: 90px;
 }
+
 .aboutService__inner .aboutTitle,
 .aboutService__inner .markup h2,
 .aboutService__inner .markup p,
@@ -111,10 +115,12 @@
     font-size: 16px;
     font-family: var(--font-gmarket);
 }
+
 .aboutService__inner .markup h2,
 .aboutService__inner .tool h2 {
     margin-bottom: 10px;
 }
+
 .aboutService__inner .markup p,
 .aboutService__inner .tool p {
     color: var(--black500);
@@ -127,9 +133,11 @@
     padding-top: 40px;
     border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
+
 .aboutContact__social {
     margin-bottom: 40px;
 }
+
 .aboutContact__social,
 .aboutContact__email {
     display: flex;
@@ -159,4 +167,75 @@
     flex-direction: column;
     font-size: 16px;
     font-family: var(--font-gmarket);
+}
+
+.aboutImg {
+    transform: translate(-50%, -50%);
+    width: 85px;
+    height: 204px;
+    overflow: hidden;
+    background-image: url(../../img/about-contact.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.aboutImg {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.aboutImg>img {
+    width: 100%;
+    vertical-align: top;
+}
+
+.aboutEmail {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.aboutEmail>.emailLink {
+    font-family: var(--font-gmarket);
+    font-size: 24px;
+    font-weight: 500;
+    position: relative;
+    color: var(--white);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+}
+
+.aboutEmail>.emailLink:hover {
+    color: var(--white);
+}
+
+.aboutEmail>.emailLink:hover>i {
+    transform: tr;
+}
+
+.underline:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--white);
+    transform-origin: bottom right;
+    transform: scaleX(0);
+    transition: transform 0.5s ease-in-out;
+}
+
+.underline:hover::after {
+    transform-origin: bottom left;
+    transform: scaleX(1);
+}
+
+.aboutEmail>.emailLink>.text {
+    margin-right: 20vw;
+    height: 36px;
+    overflow: hidden;
 }
