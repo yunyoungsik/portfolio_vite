@@ -2,15 +2,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
 
 export function subSlider() {
-    const mainSlider = document.querySelector("#mainSlider");
-
-    gsap.to(mainSlider, {
-        xPercent: -100,
-        duration: 1,
-        backgroundColor: "black",
-        ease: "Power1.easeInOut",
-        display: "none",
-    });
+    
 
     // desc 글자 쪼개기
     document.querySelectorAll(".split").forEach(text => {
@@ -68,8 +60,9 @@ export function subSlider() {
 
 
     // close
+    gsap.set("#mainSlider", {xPercent: -100});
     document.querySelector(".close").addEventListener("click", function () {
-        const close = gsap.to(mainSlider,
+        const close = gsap.to("#mainSlider",
             {
                 xPercent: 0,
                 duration: 1,

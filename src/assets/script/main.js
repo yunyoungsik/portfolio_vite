@@ -1,11 +1,13 @@
+import { introAni } from "./introAni.js";
 import { slider } from "./slider.js";
+import { transition } from "./transition.js";
 import { mouse } from "./mouse.js";
 import { smooth } from "./somooth.js";
-import { introAni } from "./introAni.js";
 
 window.addEventListener("load", function () {
-    introAni();
+    // introAni();
     slider();
+    transition();
     mouse();
     smooth();
 });

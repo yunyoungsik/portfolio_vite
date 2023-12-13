@@ -93,7 +93,9 @@
     justify-content: space-between;
     align-items: start;
 }
-
+.mainSlider__top>.logo {
+    overflow: hidden;
+}
 .mainSlider__top>.logo>a {
     display: block;
     font-size: 18px;
@@ -197,9 +199,10 @@
     margin: 0 8px;
 }
 
-.mainSlider__bottom.scroll__text {
+.mainSlider__bottom>.scroll__text {
     font-family: var(--font-gmarket);
     font-size: 16px;
+    overflow: hidden;
 }
 
 .mainSlider__bottom>.scroll__arrow {
