@@ -5,7 +5,7 @@ import { mouse } from "./mouse.js";
 import { smooth } from "./somooth.js";
 
 window.addEventListener("load", function () {
-    // introAni();
+    introAni();
     slider();
     transition();
     mouse();

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>GSAP Scroll Text Effect</title>
+    <style>
+        .text-container {
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+            /* 스크롤 영역 설정 */
+            overflow-y: scroll;
+            position: relative;
+            background-color: #000;
+        }
+
+        .text {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            font-size: 24px;
+            transition: opacity 0.5s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="text-container">
+        <div class="text">Hello, this is some text!</div>
+        <div class="text">Scroll down to see more!</div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <script>
+        const texts = document.querySelectorAll('.text');
+
+        texts.forEach((text) => {
+            let chars = text.textContent.split('');
+            text.innerHTML = ''; // Clear the original text content
+
+            chars.forEach((char, index) => {
+                const charElement = document.createElement('span');
+                charElement.textContent = char;
+                charElement.style.transitionDelay = `${index * 0.1}s`; // 각 글자마다 약간의 지연을 주어 효과를 줍니다.
+                text.appendChild(charElement);
+            });
+        });
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        texts.forEach((text) => {
+            gsap.to(text.children, {
+                scrollTrigger: {
+                    trigger: text,
+                    start: 'top 80%', // 시작 지점 설정
+                    end: 'bottom 20%', // 끝 지점 설정
+                    scrub: true, // 스크롤 속도에 따라 애니메이션 재생 설정
+                },
+                opacity: 1, // 시작 시 투명도 설정
+                y: '-100%', // 텍스트가 위로 움직이도록 설정
+                duration: 0.5, // 애니메이션 지속 시간 설정
+                stagger: 0.1, // 글자 간의 간격 설정
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,5 +1,5 @@
 /* 배경 어둡게 */
-.subFilter::after {
+/* .subFilter::after {
     position: absolute;
     top: 0;
     left: 0;
@@ -7,6 +7,16 @@
     width: 100%;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.8);
+} */
+.darkOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    z-index: 1;
 }
 
 /* scrollBar */
@@ -46,6 +56,10 @@
 }
 
 /* sub */
+#subMainSlider {
+    display: none;
+}
+
 .bgsliderWrap.sub {
     width: 500%;
 }
@@ -74,7 +88,7 @@
     color: var(--white);
     display: flex;
     align-items: center;
-    z-index: 1;
+    z-index: 2;
 }
 
 .sub__center .text {
@@ -93,6 +107,7 @@
     font-size: 48px;
     font-family: var(--font-noto);
     font-weight: 700;
+    opacity: 0;
 }
 
 .sub__center .subDesc {
@@ -100,6 +115,10 @@
     font-size: 16px;
     line-height: 1.5;
     font-family: var(--font-arita);
+}
+
+.sub__center .subDesc span {
+    opacity: 0;
 }
 
 .sub__bottom {

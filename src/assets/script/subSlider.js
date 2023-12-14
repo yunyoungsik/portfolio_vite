@@ -2,7 +2,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
 
 export function subSlider() {
-    
+
 
     // desc 글자 쪼개기
     document.querySelectorAll(".split").forEach(text => {
@@ -24,9 +24,11 @@ export function subSlider() {
         text.setAttribute("aria-label", text.innerText);
     });
 
+    // sub intro
     const subAni = gsap.timeline();
 
-    subAni.fromTo(".sub__center .subTitle", { y: 72, opacity: 0 }, { y: 0, opacity: 1, duration: 2, ease: "power1.inOut" })
+    subAni.to(".darkOverlay", { opacity: 1, duration: 1 })
+    subAni.fromTo(".sub__center .subTitle", { y: 72, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: "power1.inOut" }, "<")
     document.querySelectorAll(".split").forEach((text) => {
         const spanTimeline = gsap.timeline({ paused: true });
 
@@ -58,11 +60,11 @@ export function subSlider() {
         scrollTrigger: { scrub: 0.3 }
     });
 
-
     // close
-    gsap.set("#mainSlider", {xPercent: -100});
+    gsap.set("#subMainSlider", { xPercent: -100 });
+
     document.querySelector(".close").addEventListener("click", function () {
-        const close = gsap.to("#mainSlider",
+        const close = gsap.to("#subMainSlider",
             {
                 xPercent: 0,
                 duration: 1,
@@ -71,6 +73,10 @@ export function subSlider() {
                 display: "block",
             },
         );
+        gsap.fromTo(".darkOverlay", { opacity: 1 }, { opacity: 0, duration: 1 }, "<")
+
+        gsap.fromTo(".bgSliderWrap.sub .slider", { backgroundSize: "100%" }, { backgroundSize: "150%", duration: 1, ease: "Power1.easeInOut" }, "<")
+
         close.play();
 
         setTimeout(() => {

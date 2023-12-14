@@ -29,7 +29,23 @@ export function transition() {
     subLink.addEventListener("click", function (event) {
       event.preventDefault();
 
-      const pageTransition = gsap.timeline();
+      const pageTransition = gsap.timeline({
+        onComplete: () => {
+          if (subLink.classList.contains("td")) {
+            window.location.href = "./pages/td.html";
+          } else if (subLink.classList.contains("yt")) {
+            window.location.href = "./pages/youtube.html";
+          } else if (subLink.classList.contains("mv")) {
+            window.location.href = "./pages/movie.html";
+          } else if (subLink.classList.contains("ki")) {
+            window.location.href = "./pages/kicoff.html";
+          } else if (subLink.classList.contains("bl")) {
+            window.location.href = "./pages/blog.html";
+          }
+        }
+      });
+
+
       pageTransition.to(
         ".center__img",
         {
@@ -57,14 +73,16 @@ export function transition() {
               {
                 y: -72,
                 opacity: 0,
+                stagger: 0.051,
                 ease: "Power1.easeInOut",
               },
               index * 0.03
             );
-          }, "<");
+          });
 
-        pageTransition.add(() => spanTimeline.play(), "-=0.5"); // gsap 타임라인에 추가
+        pageTransition.add(() => spanTimeline.play(), "-=0.5");
       });
+
       pageTransition.to(
         ".descSlider",
         {
@@ -97,23 +115,22 @@ export function transition() {
         },
         "<"
       );
-      
       pageTransition.to(
         "#mainSlider",
         {
           xPercent: -100,
-          duration: 2,
+          duration: 1.3,
           backgroundColor: "black",
-          ease: "Power1.easeInOut",
+          ease: "power4.inOut",
           display: "none",
           delay: 0,
         },
         "<"
       );
       pageTransition.to(
-        ".bgSliderWrap > .slider",
+        ".bgSliderWrap > a > .slider",
         {
-          backgroundPositionX: "50%",
+          scale: 1,
           duration: 0.8,
           ease: "Power1.easeInOut",
           delay: 0,
