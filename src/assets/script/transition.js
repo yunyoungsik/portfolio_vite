@@ -25,6 +25,8 @@ export function transition() {
   // transition
   const subLinks = document.querySelectorAll(".subLink");
 
+  gsap.set(".transitionOverlay", { display: "none", opacity: 0 })
+
   subLinks.forEach((subLink) => {
     subLink.addEventListener("click", function (event) {
       event.preventDefault();
@@ -45,99 +47,101 @@ export function transition() {
         }
       });
 
+      setTimeout(() => {
+        pageTransition.to(
+          ".center__img",
+          {
+            opacity: 0,
+            duration: 1,
+            ease: "Power1.easeInOut",
+            delay: 0,
+          },
+          ">"
+        );
 
-      pageTransition.to(
-        ".center__img",
-        {
-          opacity: 0,
-          duration: 1,
-          ease: "Power1.easeInOut",
-          delay: 0,
-        },
-        ">"
-      );
+        document.querySelectorAll(".split").forEach((text) => {
+          const spanTimeline = gsap.timeline({ paused: true });
 
-      document.querySelectorAll(".split").forEach((text) => {
-        const spanTimeline = gsap.timeline({ paused: true });
+          gsap.utils
+            .toArray(text.querySelectorAll("span"))
+            .forEach((span, index) => {
+              spanTimeline.fromTo(
+                span,
+                {
+                  y: 0,
+                  opacity: 1,
+                  display: "inline-block",
+                },
+                {
+                  y: -72,
+                  opacity: 0,
+                  stagger: 0.051,
+                  ease: "Power1.easeInOut",
+                },
+                index * 0.03
+              );
+            });
 
-        gsap.utils
-          .toArray(text.querySelectorAll("span"))
-          .forEach((span, index) => {
-            spanTimeline.fromTo(
-              span,
-              {
-                y: 0,
-                opacity: 1,
-                display: "inline-block",
-              },
-              {
-                y: -72,
-                opacity: 0,
-                stagger: 0.051,
-                ease: "Power1.easeInOut",
-              },
-              index * 0.03
-            );
-          });
+          pageTransition.add(() => spanTimeline.play(), "-=0.5");
+        });
 
-        pageTransition.add(() => spanTimeline.play(), "-=0.5");
+        pageTransition.to(
+          ".descSlider",
+          {
+            opacity: 0,
+            duration: 1,
+            ease: "expo.out",
+            delay: 0,
+          },
+          "<"
+        );
+        pageTransition.to(
+          ".logo > a",
+          {
+            opacity: 0,
+            yPercent: -110,
+            duration: 1,
+            ease: "expo.out",
+            delay: 0,
+          },
+          "<"
+        );
+        pageTransition.to(
+          [".page > span", ".scroll__text > p"],
+          {
+            opacity: 0,
+            yPercent: 110,
+            duration: 1,
+            ease: "expo.out",
+            delay: 0,
+          },
+          "<"
+        );
+        pageTransition.to(
+          "#mainSlider",
+          {
+            xPercent: -100,
+            duration: 1.3,
+            backgroundColor: "black",
+            ease: "power4.inOut",
+            display: "none",
+            delay: 0,
+          },
+          "<"
+        );
+        pageTransition.to(
+          ".bgSliderWrap > a > .slider",
+          {
+            scale: 1,
+            duration: 0.8,
+            ease: "Power1.easeInOut",
+            delay: 0,
+          },
+          "<"
+        );
+        pageTransition.to(".transitionOverlay", { display: "inline-block", duration: 1.5, ease: "Power1.easeInOut", opacity: 1 }, "<")
       });
-
-      pageTransition.to(
-        ".descSlider",
-        {
-          opacity: 0,
-          duration: 1,
-          ease: "expo.out",
-          delay: 0,
-        },
-        "<"
-      );
-      pageTransition.to(
-        ".logo > a",
-        {
-          opacity: 0,
-          yPercent: -110,
-          duration: 1,
-          ease: "expo.out",
-          delay: 0,
-        },
-        "<"
-      );
-      pageTransition.to(
-        [".page > span", ".scroll__text > p"],
-        {
-          opacity: 0,
-          yPercent: 110,
-          duration: 1,
-          ease: "expo.out",
-          delay: 0,
-        },
-        "<"
-      );
-      pageTransition.to(
-        "#mainSlider",
-        {
-          xPercent: -100,
-          duration: 1.3,
-          backgroundColor: "black",
-          ease: "power4.inOut",
-          display: "none",
-          delay: 0,
-        },
-        "<"
-      );
-      pageTransition.to(
-        ".bgSliderWrap > a > .slider",
-        {
-          scale: 1,
-          duration: 0.8,
-          ease: "Power1.easeInOut",
-          delay: 0,
-        },
-        "<"
-      );
-    });
+    }, 1500);
   });
 
   // const targets = gsap.utils.toArray(".split");

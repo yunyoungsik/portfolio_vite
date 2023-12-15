@@ -8,15 +8,24 @@
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.8);
 } */
-.darkOverlay {
+/* .darkOverlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    height: 100vh;
+    background-color: var(--black);
     opacity: 0;
-    z-index: 1;
+    z-index: 9999;
+    display: none;
+} */
+
+/* 애니메이션 셋팅 */
+.close.sub,
+.about.sub,
+.scrollBar,
+.current.sub {
+    opacity: 0;
 }
 
 /* scrollBar */
@@ -58,6 +67,7 @@
 /* sub */
 #subMainSlider {
     display: none;
+    transform: translateX(-100%);
 }
 
 .bgsliderWrap.sub {

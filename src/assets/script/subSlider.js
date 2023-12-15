@@ -2,9 +2,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
 
 export function subSlider() {
-
-
-    // desc 글자 쪼개기
+    // 글자 쪼개기
     document.querySelectorAll(".split").forEach(text => {
         let theText = text.innerText;
         let newText = "";
@@ -27,7 +25,8 @@ export function subSlider() {
     // sub intro
     const subAni = gsap.timeline();
 
-    subAni.to(".darkOverlay", { opacity: 1, duration: 1 })
+    subAni.to([".close.sub", ".about.sub"], { opacity: 1, duration: 1.5, ease: "Power1.easeInOut" })
+    subAni.fromTo(".transitionOverlay", { opacity: 1, zIndex: 1 }, { display: "inline-block", opacity: 0.8, duration: 1.5, ease: "Power1.easeInOut" }, "<")
     subAni.fromTo(".sub__center .subTitle", { y: 72, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: "power1.inOut" }, "<")
     document.querySelectorAll(".split").forEach((text) => {
         const spanTimeline = gsap.timeline({ paused: true });
@@ -51,7 +50,7 @@ export function subSlider() {
 
         subAni.add(() => spanTimeline.play(), "-=0.5"); // subAni 타임라인에 추가
     });
-    subAni.fromTo([".current.sub", ".scrollBar"], { y: 24, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: "power1.inOut" })
+    subAni.fromTo([".current.sub", ".scrollBar"], { y: 24 }, { y: 0, opacity: 1, duration: 1, ease: "power1.inOut" })
 
     // navBar
     gsap.to("progress", {
@@ -61,26 +60,24 @@ export function subSlider() {
     });
 
     // close
-    gsap.set("#subMainSlider", { xPercent: -100 });
-
-    document.querySelector(".close").addEventListener("click", function () {
+    document.querySelector(".close").addEventListener("click", function (event) {
+        event.preventDefault();
         const close = gsap.to("#subMainSlider",
             {
-                xPercent: 0,
+                translateX: 0,
                 duration: 1,
                 backgroundColor: "white",
                 ease: "Power1.easeInOut",
                 display: "block",
             },
         );
-        gsap.fromTo(".darkOverlay", { opacity: 1 }, { opacity: 0, duration: 1 }, "<")
-
         gsap.fromTo(".bgSliderWrap.sub .slider", { backgroundSize: "100%" }, { backgroundSize: "150%", duration: 1, ease: "Power1.easeInOut" }, "<")
+        gsap.to(".transitionOverlay", { opacity: 0, duration: 3, ease: "Power1.easeInOut" })
 
         close.play();
 
         setTimeout(() => {
             window.location.href = "../index.html";
-        }, (close.duration() + 1) * 1000);
+        }, (close.duration() + 1) * 2000);
     });
 }

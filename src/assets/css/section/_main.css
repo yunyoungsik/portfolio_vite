@@ -187,13 +187,13 @@
     display: block;
 }
 
-.mainSlider__center>.center__img>.centerSliderWrap>.centerSlider.s1 {
+/* .mainSlider__center>.center__img>.centerSliderWrap>.centerSlider.s1 {
     transform: translateX(-50%);
 }
 
 .mainSlider__center>.center__img>.centerSliderWrap>.centerSlider.s2 {
     transform: translateX(-50%);
-}
+} */
 
 .mainSlider__center>.center__img>.centerSliderWrap>.centerSlider>a>img {
     width: 1920px;
