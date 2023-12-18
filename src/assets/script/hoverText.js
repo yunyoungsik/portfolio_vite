@@ -21,15 +21,28 @@ export function hoverText() {
         text.setAttribute("aria-label", text.innerText);
     });
 
-    const email = document.querySelector(".aboutEmail");
+    const email = document.querySelector(".emailLink");
 
     email.addEventListener("mouseover", function () {
         const splitTexts = document.querySelectorAll(".split");
-
+        const windowWidth = window.innerWidth;
+    
         splitTexts.forEach((text) => {
             const spanTimeline = gsap.timeline({ paused: true });
-
+    
             gsap.utils.toArray(text.querySelectorAll("span")).forEach((span, index) => {
+                let yPos = 0;
+                let animOpacity = 1;
+    
+                // Check window width to apply different animation properties
+                if (windowWidth <= 768) { // Example threshold, change as needed
+                    yPos = -50;
+                    animOpacity = 0.5;
+                } else {
+                    yPos = -75;
+                    animOpacity = 1;
+                }
+    
                 spanTimeline.fromTo(
                     span,
                     {
@@ -38,8 +51,8 @@ export function hoverText() {
                         display: "inline-block"
                     },
                     {
-                        y: -75,
-                        opacity: 1,
+                        y: yPos,
+                        opacity: animOpacity,
                         ease: "Power1.easeInOut"
                     },
                     index * 0.02
@@ -47,8 +60,9 @@ export function hoverText() {
             });
             spanTimeline.play();
         });
-        gsap.fromTo(".svg > .svg1", { opacity: 1, scale: 1 }, { opacity: 1, scale: 0, transformOrigin: "100% 0%", ease: "Power1.easeInOut" })
-        gsap.fromTo(".svg > .svg2", { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, transformOrigin: "0% 100%", ease: "Power1.easeInOut" })
+    
+        gsap.fromTo(".svg > .svg1", { opacity: 1, scale: 1 }, { opacity: 1, scale: 0, transformOrigin: "100% 0%", ease: "Power1.easeInOut" });
+        gsap.fromTo(".svg > .svg2", { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, transformOrigin: "0% 100%", ease: "Power1.easeInOut" });
     });
 
 

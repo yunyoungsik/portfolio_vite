@@ -71,7 +71,14 @@ export function subSlider() {
                 display: "block",
             },
         );
-        gsap.fromTo(".bgSliderWrap.sub .slider", { backgroundSize: "100%" }, { backgroundSize: "150%", duration: 1, ease: "Power1.easeInOut" }, "<")
+        ScrollTrigger.matchMedia({
+            "(min-width: 801px)": function () {
+                gsap.fromTo(".bgSliderWrap.sub .slider", { backgroundSize: "100%" }, { backgroundSize: "150%", duration: 1, ease: "Power1.easeInOut" }, "<")
+            },
+            "(max-width: 800px)": function() {
+                
+            }
+        })
         gsap.to(".transitionOverlay", { opacity: 0, duration: 3, ease: "Power1.easeInOut" })
 
         close.play();

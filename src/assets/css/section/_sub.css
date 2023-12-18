@@ -309,11 +309,16 @@
     .sub__center .text {
         padding-left: 20px;
     }
+    /* section */
+    .section {
+        width: 0;
+    }
 
     /* info */
     .info {
         font-size: 0.8rem;
         padding: 0 2vw 12vh;
+        width: 50%;
     }
 
     .info__inner h2,

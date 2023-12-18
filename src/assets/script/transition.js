@@ -25,8 +25,6 @@ export function transition() {
   // transition
   const subLinks = document.querySelectorAll(".subLink");
 
-  gsap.set(".transitionOverlay", { display: "none", opacity: 0 })
-
   subLinks.forEach((subLink) => {
     subLink.addEventListener("click", function (event) {
       event.preventDefault();
