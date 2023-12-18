@@ -24,11 +24,31 @@
 
 #about #header .aboutClose a {
     display: block;
+    position: relative;
 }
 
 /* main */
 #main {
     box-sizing: border-box;
+}
+
+/* underline */
+.underline:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--white);
+    transform-origin: bottom right;
+    transform: scaleX(0);
+    transition: transform 0.5s ease-in-out;
+}
+
+.underline:hover::after {
+    transform-origin: bottom left;
+    transform: scaleX(1);
 }
 
 /* aboutSliderWrap */
@@ -170,22 +190,25 @@
 }
 
 .aboutImg {
-    transform: translate(-50%, -50%);
-    width: 85px;
-    height: 204px;
+    width: 130px;
+    height: 350px;
     overflow: hidden;
     background-image: url(../../img/about-contact.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
 }
 
-.aboutImg {
+/* .aboutImg {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-}
+} */
 
 .aboutImg>img {
     width: 100%;
@@ -195,6 +218,7 @@
 .aboutEmail {
     display: flex;
     justify-content: flex-end;
+    z-index: 1000;
 }
 
 .aboutEmail>.emailLink {
@@ -203,35 +227,12 @@
     font-weight: 500;
     position: relative;
     color: var(--white);
-    z-index: 1000;
     display: flex;
     align-items: center;
 }
 
 .aboutEmail>.emailLink:hover {
     color: var(--white);
-}
-
-.aboutEmail>.emailLink:hover>i {
-    transform: tr;
-}
-
-.underline:after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background-color: var(--white);
-    transform-origin: bottom right;
-    transform: scaleX(0);
-    transition: transform 0.5s ease-in-out;
-}
-
-.underline:hover::after {
-    transform-origin: bottom left;
-    transform: scaleX(1);
 }
 
 .aboutEmail>.emailLink>.text {
@@ -255,4 +256,12 @@
 .svg>.svg2 {
     opacity: 0;
     scale: 0;
+}
+
+.aboutContact__bottom {
+    height: 450px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    position: relative;
 }

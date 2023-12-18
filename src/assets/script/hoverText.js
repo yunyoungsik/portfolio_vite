@@ -21,7 +21,7 @@ export function hoverText() {
         text.setAttribute("aria-label", text.innerText);
     });
 
-    const email = document.querySelector(".aboutEmail > a");
+    const email = document.querySelector(".aboutEmail");
 
     email.addEventListener("mouseover", function () {
         const splitTexts = document.querySelectorAll(".split");
@@ -42,7 +42,7 @@ export function hoverText() {
                         opacity: 1,
                         ease: "Power1.easeInOut"
                     },
-                    index * 0.01
+                    index * 0.02
                 );
             });
             spanTimeline.play();
