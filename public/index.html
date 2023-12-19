@@ -5,15 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Y - Portfolio</title>
-  <script type="module" crossorigin src="/assets/index-rfODnLNE.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-vDmLQiYS.css">
+  <script type="module" crossorigin src="/assets/index-6RPmIYiL.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-dOfHmWPV.css">
 </head>
 
 <body>
-  <!-- intro__popup -->
   <!-- <div class="intro__popup">
     <a href="#" class="about underline">About</a>
-
     <div class="mainSlider">
       <div class="mainSlider__top">
         <h1 class="logo">
@@ -38,7 +36,7 @@
           <div class="descSlider">
             <div class="descWrap">
               <p class="desc">
-                1를 이용하여 작업한 사이트입니다.
+                PHP를 이용하여 작업한 사이트입니다.
               </p>
             </div>
           </div>
@@ -96,13 +94,14 @@
       </div>
     </div>
   </div> -->
+  <!-- //intro__popup -->
 
   <div id="wrap">
     <main id="main" class="scroll">
       <a href="pages/about.html" class="about underline">About</a>
       <div class="mouse__cursor">View</div>
 
-      <div class="mainSlider">
+      <div class="mainSlider" id="mainSlider">
         <div class="mainSlider__top">
           <h1 class="logo">
             <a href="index.html">Y</a>
@@ -116,19 +115,19 @@
             <div class="titleSlider">
               <div class="titleWrap">
                 <h2 class="title">
-                  <a href="pages/td.html">Trend Device</a>
+                  <a href="#" class="td subLink split">Trend Device</a>
                 </h2>
                 <h2 class="title">
-                  <a href="pages/youtube.html">YouTube</a>
+                  <a href="#" class="yt subLink split">YouTube</a>
                 </h2>
                 <h2 class="title">
-                  <a href="pages/movie.html">Movie</a>
+                  <a href="#" class="mv subLink split">Movie</a>
                 </h2>
                 <h2 class="title">
-                  <a href="pages/kickoff.html">Kickoff</a>
+                  <a href="#" class="ki subLink split">Kickoff</a>
                 </h2>
                 <h2 class="title">
-                  <a href="pages/blog.html">Blog</a>
+                  <a href="#" class="bl subLink split">Blog</a>
                 </h2>
               </div>
             </div>
@@ -155,19 +154,19 @@
           <div class="center__img">
             <div class="centerSliderWrap mouse__text">
               <div class="centerSlider s1 main">
-                <a href="pages/td.html"><img src="/assets/main01-HBLPYVso.jpg" alt="main img 01"></a>
+                <a href="#" class="td subLink"><img src="/assets/main01-HBLPYVso.jpg" alt="main img 01"></a>
               </div>
               <div class="centerSlider s2 main">
-                <a href="pages/youtube.html"><img src="/assets/main02-gEO6dAW1.jpg" alt="main img 02"></a>
+                <a href="#" class="yt subLink"><img src="/assets/main02-gEO6dAW1.jpg" alt="main img 02"></a>
               </div>
               <div class="centerSlider s3 main">
-                <a href="pages/movie.html"><img src="/assets/main03-zXj1aq85.jpg" alt="main img 03"></a>
+                <a href="#" class="mv subLink"><img src="/assets/main03-zXj1aq85.jpg" alt="main img 03"></a>
               </div>
               <div class="centerSlider s4 main">
-                <a href="pages/kickoff.html"><img src="/assets/main04--Pil3VnL.jpg" alt="main img 04"></a>
+                <a href="#" class="ki subLink"><img src="/assets/main04--Pil3VnL.jpg" alt="main img 04"></a>
               </div>
               <div class="centerSlider s5 main">
-                <a href="pages/blog.html"><img src="/assets/main05-C4zy8y0o.jpg" alt="main img 05"></a>
+                <a href="#" class="bl subLink"><img src="/assets/main05-C4zy8y0o.jpg" alt="main img 05"></a>
               </div>
             </div>
           </div>
@@ -184,7 +183,9 @@
             <span class="pageLine">―</span>
             <span>05</span>
           </div>
-          <div class="scroll__text">(Scroll)</div>
+          <div class="scroll__text">
+            <p>(Scroll)</p>
+          </div>
           <div class="scroll__arrow">
             <div class="prevBtn">
               <svg width="32" height="32" viewBox="0 0 24 24" data-v-c5fc2e64="">
@@ -202,13 +203,24 @@
       </div>
       <div class="bgSlider" id="parallax__cont">
         <div class="bgSliderWrap mouse__text">
-          <a href="pages/td.html" class="slider s1 parallax__item"></a>
-          <a href="pages/youtube.html" class="slider s2 parallax__item"></a>
-          <a href="pages/movie.html" class="slider s3 parallax__item"></a>
-          <a href="pages/kickoff.html" class="slider s4 parallax__item"></a>
-          <a href="pages/blog.html" class="slider s5 parallax__item"></a>
+          <a href="#" class="td parallax__item subLink">
+            <div class="slider s1"></div>
+          </a>
+          <a href="#" class="yt parallax__item subLink">
+            <div class="slider s2"></div>
+          </a>
+          <a href="#" class="mv parallax__item subLink">
+            <div class="slider s3"></div>
+          </a>
+          <a href="#" class="ki parallax__item subLink">
+            <div class="slider s4"></div>
+          </a>
+          <a href="#" class="bl parallax__item subLink">
+            <div class="slider s5"></div>
+          </a>
         </div>
       </div>
+      <div class="transitionOverlay main"></div>
     </main>
   </div>
 </body>

@@ -94,6 +94,7 @@
     color: var(--white);
     background-color: var(--black);
 }
+
 .aboutDesc {
     font-size: 1rem;
 
@@ -195,6 +196,7 @@
     font-size: 16px;
     font-family: var(--font-gmarket);
 }
+
 .social a:hover,
 .email a:hover {
     text-decoration: underline;
@@ -230,7 +232,6 @@
 .aboutEmail {
     display: flex;
     justify-content: flex-end;
-    z-index: 9999;
 }
 
 .aboutEmail>.emailLink {
@@ -241,6 +242,7 @@
     color: var(--white);
     display: flex;
     align-items: center;
+    z-index: 9999;
 }
 
 .aboutEmail>.emailLink>.text {
@@ -275,16 +277,17 @@
 }
 
 /* 반응형 */
-@media(max-width:800px){
+@media(max-width:800px) {
     #about #header {
         padding: 15px 20px 0;
     }
 }
 
-@media(max-width: 800px){
+@media(max-width: 800px) {
     .aboutSlider {
         height: 25vh;
     }
+
     .aboutCenter {
         position: relative;
         display: flex;
@@ -296,6 +299,7 @@
         background-color: var(--black);
         z-index: 0;
     }
+
     .aboutCenter p {
         position: absolute;
         right: 50%;
@@ -304,38 +308,43 @@
     }
 }
 
-@media(max-width: 800px){
+@media(max-width: 800px) {
     .aboutDesc {
         height: 50vh;
         padding: 15px 20px 25px;
     }
+
     .aboutDesc p {
         margin-top: 10vh;
         font-size: 0.9rem;
     }
 }
 
-@media(max-width: 800px){
-    .aboutText{
+@media(max-width: 800px) {
+    .aboutText {
         height: auto;
         padding: 15px 20px 25px;
     }
+
     .aboutService {
         height: auto;
         padding: 0;
         justify-content: left;
     }
+
     .aboutService__inner {
         width: 100%;
         display: inline-block;
     }
+
     .aboutSkill {
         flex-direction: column;
     }
+
     .aboutService__inner .aboutTitle {
         margin-bottom: 1.5rem;
     }
-    
+
     .aboutService__inner .markup {
         margin: 0 0 1rem;
     }
@@ -357,20 +366,24 @@
     .aboutService__inner .tool p {
         font-size: 0.9rem;
     }
+
     /* //.aboutService */
     .aboutContact__social {
         flex-wrap: wrap;
         margin-bottom: 1.8rem;
     }
+
     .aboutContact__social>.title {
         width: 100%;
         margin-bottom: 10vh;
     }
+
     .social,
     .email {
         font-size: 0.9rem;
     }
-    .aboutContact__email > .title {
+
+    .aboutContact__email>.title {
         display: none;
     }
 
@@ -380,6 +393,7 @@
     .aboutContact__email>.title2 {
         font-size: 0.9rem;
     }
+
     .aboutContact__bottom {
         width: 100%;
         height: auto;
@@ -387,23 +401,28 @@
         flex-direction: column;
         align-items: stretch;
         margin-top: 10vh;
-        
+
     }
+
     .aboutImg {
         height: 260px;
         position: static;
         transform: translate(0%);
     }
-    .aboutEmail{
+
+    .aboutEmail {
         margin-top: 20vh;
     }
+
     .aboutEmail>.emailLink {
         font-size: 2.5rem;
     }
+
     .aboutEmail>.emailLink>.text {
         height: 49px;
     }
-    .svg > svg {
+
+    .svg>svg {
         width: 2.5rem;
     }
 }
